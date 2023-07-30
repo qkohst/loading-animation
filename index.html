@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Loading Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class='loading-container d-none'>
+        <div class="overlay"></div>
+        <div class='loader'>
+            <div class='loader--dot'></div>
+            <div class='loader--dot'></div>
+            <div class='loader--dot'></div>
+            <div class='loader--dot'></div>
+            <div class='loader--dot'></div>
+            <div class='loader--dot'></div>
+            <div class='loader--text'></div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="container">
+            <button class="btn-loading">Show Loading</button>
+        </div>
+    </div>
+
+
+    <!-- Pastikan Anda sudah menyertakan library jQuery sebelum script ini -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Ketika form disubmit atau AJAX request dimulai
+            $(".btn-loading").on("click", function (event) {
+                event.preventDefault();
+                // Tampilkan animasi loading
+                $(".loading-container").show();
+                setTimeout(updateTimer, 5000);
+            });
+
+            function updateTimer() {
+                $(".loading-container").hide()
+            }
+        });
+    </script>
+
+</body>
+
+</html>
